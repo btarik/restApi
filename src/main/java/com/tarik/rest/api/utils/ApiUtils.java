@@ -88,7 +88,7 @@ public class ApiUtils {
   public static void saveXmlFile(String jsonFileName, String xmlFileName) throws IOException {
 
     if (StringUtils.isEmpty(jsonFileName) || StringUtils.isEmpty(xmlFileName)) {
-      log.error("Json file name or xml file name is eempty");
+      log.error("Json file name or xml file name is empty");
       return;
     }
 

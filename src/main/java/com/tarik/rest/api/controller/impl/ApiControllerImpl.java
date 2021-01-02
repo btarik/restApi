@@ -48,7 +48,7 @@ public class ApiControllerImpl implements ApiController {
     PostModel specificPost = postService.getSpecificPost(id);
 
     if (specificPost == null) {
-      log.info("Get post information with id : " + id + ": No content");
+      log.info("Get post information with id : " + id + ":  No content");
       return ResponseEntity.notFound().build();
     }
     return ResponseEntity.ok(specificPost);
@@ -87,7 +87,7 @@ public class ApiControllerImpl implements ApiController {
   @Override
   public ResponseEntity<PostModel> addPost(PostModel postModel) {
 
-    log.info("create a new post");
+    log.info("Create a new post");
 
     PostModel postModelCreated = postService.addPost(postModel);
 
@@ -100,13 +100,13 @@ public class ApiControllerImpl implements ApiController {
   @Override
   public ResponseEntity<PostModel> updatePost(PostModel postModel, int id) {
     try {
-      log.info("update post");
+      log.info("Update post");
 
       PostModel updatePost = postService.updatePost(postModel, id);
 
       return ResponseEntity.ok(updatePost);
     } catch (RuntimeException ex) {
-      log.error("Post with id : " + id + "NOT FOUND");
+      log.error("Post with id : " + id + " NOT FOUND");
       return ResponseEntity.notFound().build();
     }
 
@@ -118,7 +118,7 @@ public class ApiControllerImpl implements ApiController {
     try {
       postService.getSpecificPost(id);
     } catch (HttpClientErrorException ex) {
-      log.error("Post with id : " + id + "NOT FOUND");
+      log.error("Post with id : " + id + " NOT FOUND");
       return ResponseEntity.notFound().build();
     }
 
