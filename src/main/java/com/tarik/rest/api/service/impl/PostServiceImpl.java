@@ -151,7 +151,6 @@ public class PostServiceImpl implements PostService {
 
   @Override
   public Integer deletePost(int id) {
-
     String postsEnvironment = environment.getProperty(ApiUtils.JSON_PLACEHOLDER_URL_POST);
 
     if (StringUtils.isEmpty(postsEnvironment)) {
